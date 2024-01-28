@@ -1,14 +1,14 @@
 // import { useState } from "react";
 
-const Dropdown = () => {
+const ExperienceSection = () => {
   return (
-    <div className="dropdown">
+    <div className="experience-section">
       <div className="icon education-icon"></div>
-      <h2>Education</h2>
+      <h2>Experience</h2>
       <div className="icon dropdown-icon"></div>
     </div>
   )
 
 }
 
-export default Dropdown
+export default ExperienceSection

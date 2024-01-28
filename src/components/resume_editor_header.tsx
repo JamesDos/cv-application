@@ -1,12 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const PageEditorHeader = () => {
+const ResumeEditorHeader = () => {
   return (
-    <div className="page-editor-header">
+    <div className="resume-editor-header">
       <button className="clear-resume-btn">Clear Resume</button>
       <button className="load-example-btn">Load Example</button>
     </div>
   )
 }
 
-export default PageEditorHeader
+export default ResumeEditorHeader

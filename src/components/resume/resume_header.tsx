@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { HeaderInfo } from "../../data_types/types";
 
 const ResumeHeader = ({name, email, phoneNum, city}: HeaderInfo) => {

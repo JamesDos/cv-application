@@ -10,6 +10,7 @@ type FormItemInfo = {
   type: string,
   placeholder: string,
   label: string
+  value: string | Date
 }
 
 export type {HeaderInfo, FormItemInfo}

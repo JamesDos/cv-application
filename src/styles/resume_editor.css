@@ -1,0 +1,28 @@
+.resume-editor-header {
+  display: flex;
+  justify-content: center;
+  grid-row: 1 / 1;
+  grid-column: 2 / 3;
+}
+
+.personal-details-container {
+  grid-row: 2 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-section {
+
+  grid-column: 2 / 3;
+}
+
+.experience-section {
+  grid-column: 2 / 3;
+}

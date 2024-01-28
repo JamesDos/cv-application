@@ -1,16 +1,22 @@
 .resume-container {
   display: flex;
   justify-content: center;
+  grid-column: 3 / 4;
 }
 
 .resume-page-header {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: aqua;
 }
 
 .resume-header-info {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 16px;
 }
