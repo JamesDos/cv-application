@@ -1,0 +1,50 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+#trash-icon {
+  background-image: url(../../public/trash.png);
+}
+
+.chevron-up {
+  margin-left: auto;
+  background-image: url(../../public/chevron_up.png)
+}
+
+.chevron-down {
+  margin-left: auto;
+  background-image: url(../../public/chevron_down.png)
+}
+
+#education-icon {
+  background-image: url(../../public/cap.png);
+}
+
+#experience-icon {
+  background-image: url(../../public/work.png);
+}
+
+#email-icon {
+  background-image: url(../../public/email.png);
+}
+
+#phone-icon {
+  background-image: url(../../public/phone.png)
+}
+
+#location-icon {
+  background-image: url(../../public/location_pin.png);
+}
+
+#page-icon {
+  background-image: url(../../public/page.png);
+}
+
+#customize-icon {
+  background-image: url(../../public/customize.png);
+}
+
+
+

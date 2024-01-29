@@ -1,7 +1,11 @@
 .resume-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   grid-column: 3 / 4;
+  grid-row: 2 / span all;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 48px 24px;
 }
 
 .resume-page-header {
@@ -11,7 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  background-color: var(--resume-header-color)
 }
 
 .resume-header-info {
@@ -19,4 +23,38 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+.resume-header-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-section-title {
+  background-color: var(--resume-title-color);
+  text-align: center;
+  padding: 8px;
+}
+
+.resume-education-section, .resume-experience-section {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.resume-item {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.resume-item-left {
+
+}
+
+.resume-item-right :first-child {
+  font-weight: bold;
+}
+
+.experience-description {
+  grid-column: 2 / 2;
 }

@@ -13,4 +13,13 @@ type FormItemInfo = {
   value: string | Date
 }
 
-export type {HeaderInfo, FormItemInfo}
+type ResumeItemInfo = {
+  startDate: string,
+  endDate: string,
+  location: string,
+  place: string,
+  descrTitle: string,
+  descr: string
+}
+
+export type {HeaderInfo, FormItemInfo, ResumeItemInfo}
