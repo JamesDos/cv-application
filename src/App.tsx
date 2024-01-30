@@ -10,20 +10,15 @@ import './styles/App.css';
 function App() {
   const [person, setPerson] = useState(startingData)
 
-  const setHeader = (e: Event) => {
-    e.preventDefault();
-    
-    setPerson({...person, personalDetails: {...person.personalDetails, name: newName}})
+  const setHeader = (propName: string, newName: string) => {
+    setPerson({...person, personalDetails: {...person.personalDetails, [propName]: newName}})
   }
-
-
+  
   return (
     <>
-    <CustomizeBar/>
-    <Resume/>
-    <ResumeEditor />
-    <EducationSection />
-    <ExperienceSection />
+      <CustomizeBar/>
+      <Resume {...person}/>
+      <ResumeEditor personalDetails={person.personalDetails} setHeader={setHeader}/>
     </>
   )
 }

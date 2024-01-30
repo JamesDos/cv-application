@@ -2,13 +2,19 @@
 import { ResumeHeader } from './resume_header';
 import ResumeEducation from './resume_education';
 import ResumeExperience from './resume_experience';
+import { PersonInfo} from '../../data_types/types';
 import '../../styles/resume.css';
 
 
-const Resume = () => {
+const Resume = ({personalDetails, educationDetals, experienceDetails}: PersonInfo) => {
   return (
     <div className="resume-container">
-       <ResumeHeader name="John Smith" email="johnsmith@gmail.com" phoneNum='123-456-789' city="New York, NY"/>
+       <ResumeHeader 
+          name={personalDetails.name} 
+          email={personalDetails.email} 
+          phoneNum={personalDetails.phoneNum} 
+          city={personalDetails.city}
+          />
        <ResumeEducation />
        <ResumeExperience />
     </div>
