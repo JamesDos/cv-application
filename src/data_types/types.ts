@@ -10,7 +10,8 @@ type FormItemInfo = {
   type: string,
   placeholder: string,
   label: string
-  value: string | Date
+  value: string
+  onChange: (name: string) => void;
 }
 
 type ResumeItemInfo = {
@@ -22,4 +23,10 @@ type ResumeItemInfo = {
   descr: string
 }
 
-export type {HeaderInfo, FormItemInfo, ResumeItemInfo}
+type PersonInfo = {
+  personalDetails: HeaderInfo,
+  educationDetals: FormItemInfo[],
+  experienceDetails: FormItemInfo[],
+}
+
+export type {HeaderInfo, FormItemInfo, ResumeItemInfo, PersonInfo}

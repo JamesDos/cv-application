@@ -5,45 +5,45 @@
 }
 
 #trash-icon {
-  background-image: url(../../public/trash.png);
+  background-image: url(/trash.png);
 }
 
 .chevron-up {
   margin-left: auto;
-  background-image: url(../../public/chevron_up.png)
+  background-image: url(/chevron_up.png)
 }
 
 .chevron-down {
   margin-left: auto;
-  background-image: url(../../public/chevron_down.png)
+  background-image: url(/chevron_down.png)
 }
 
 #education-icon {
-  background-image: url(../../public/cap.png);
+  background-image: url(/cap.png);
 }
 
 #experience-icon {
-  background-image: url(../../public/work.png);
+  background-image: url(/work.png);
 }
 
 #email-icon {
-  background-image: url(../../public/email.png);
+  background-image: url(/email.png);
 }
 
 #phone-icon {
-  background-image: url(../../public/phone.png)
+  background-image: url(/phone.png)
 }
 
 #location-icon {
-  background-image: url(../../public/location_pin.png);
+  background-image: url(/location_pin.png);
 }
 
 #page-icon {
-  background-image: url(../../public/page.png);
+  background-image: url(/page.png);
 }
 
 #customize-icon {
-  background-image: url(../../public/customize.png);
+  background-image: url(/customize.png);
 }
 
 
