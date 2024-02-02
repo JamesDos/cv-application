@@ -66,10 +66,30 @@ input {
 
 .education-section, .experience-section {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 16px;
   padding: 8px 16px;
-  align-items: center;
   grid-column: 2 / 3;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 16px;
+}
+
+.education-section-header, .experience-section-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  align-items: center; */
+  /* grid-column: 2 / 3;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 16px; */
+}
+
+.education-section-header > div, .experience-section-header > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

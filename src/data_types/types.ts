@@ -23,10 +23,15 @@ type ResumeItemInfo = {
   descr: string
 }
 
+type SectionProp = {
+  isActive: boolean[],
+  handleDropdown: () => void,
+}
+
 type PersonInfo = {
   personalDetails: HeaderInfo,
   educationDetals: FormItemInfo[],
   experienceDetails: FormItemInfo[],
 }
 
-export type {HeaderInfo, FormItemInfo, ResumeItemInfo, PersonInfo}
+export type {HeaderInfo, FormItemInfo, ResumeItemInfo, SectionProp, PersonInfo}
