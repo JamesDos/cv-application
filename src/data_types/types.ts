@@ -15,6 +15,7 @@ type FormItemInfo = {
 }
 
 type ResumeItemInfo = {
+  id: string,
   startDate: string,
   endDate: string,
   location: string,
@@ -23,15 +24,35 @@ type ResumeItemInfo = {
   descr: string
 }
 
+type PersonInfo = {
+  personalDetails: HeaderInfo,
+  educationDetals: ResumeItemInfo[],
+  experienceDetails: ResumeItemInfo[],
+}
+
+// Prop types
+
 type SectionProp = {
+  dropdownItems: ResumeItemInfo[],
   isActive: boolean[],
   handleDropdown: () => void,
 }
 
-type PersonInfo = {
-  personalDetails: HeaderInfo,
-  educationDetals: FormItemInfo[],
-  experienceDetails: FormItemInfo[],
+type ResumeEditorProp = {
+  person: PersonInfo,
+  setHeader: (propName: string, newName: string) => void,
 }
 
-export type {HeaderInfo, FormItemInfo, ResumeItemInfo, SectionProp, PersonInfo}
+type DropdownContainerProp = {
+  dropdownItems: ResumeItemInfo[],
+}
+
+export type {
+  HeaderInfo, 
+  FormItemInfo, 
+  ResumeItemInfo, 
+  SectionProp, 
+  PersonInfo, 
+  ResumeEditorProp,
+  DropdownContainerProp,
+}

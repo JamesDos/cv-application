@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SectionProp } from "../../data_types/types";
 import DropdownItemContainer from "../dropdown/dropdown-item-container"
 
-const ExperienceSection = ({isActive, handleDropdown}: SectionProp) => {
+const ExperienceSection = ({dropdownItems, isActive, handleDropdown}: SectionProp) => {
 
   return (
     <div className="experience-section">
@@ -13,7 +13,7 @@ const ExperienceSection = ({isActive, handleDropdown}: SectionProp) => {
         </div>
         <div className="icon chevron-up"></div>
       </div>
-      {isActive[1] && <DropdownItemContainer />}
+      {isActive[1] && <DropdownItemContainer dropdownItems={dropdownItems}/>}
     </div>
   )
 }

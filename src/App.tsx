@@ -18,7 +18,7 @@ function App() {
     <>
       <CustomizeBar/>
       <Resume {...person}/>
-      <ResumeEditor personalDetails={person.personalDetails} setHeader={setHeader}/>
+      <ResumeEditor person={person} setHeader={setHeader}/>
     </>
   )
 }

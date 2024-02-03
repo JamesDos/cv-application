@@ -1,9 +1,9 @@
 // import { useState } from "react";
 
-const DropdownItem = ({school}: {school: string}) => {
+const DropdownItem = ({location}: {location: string}) => {
   return (
     <div className="dropdown-item">
-      <h1>{school}</h1>
+      <h1>{location}</h1>
       <div className="icon eye-icon"></div>
     </div>
   )
