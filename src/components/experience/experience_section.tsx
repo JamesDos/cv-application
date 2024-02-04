@@ -1,8 +1,28 @@
 import { useState } from "react";
 import { SectionProp } from "../../data_types/types";
-import DropdownItemContainer from "../dropdown/dropdown-item-container"
+import DropdownItemContainer from "../dropdown/dropdown-item-container";
+import ExperienceForm from "./experience_form";
+import { ResumeItemInfo } from "../../data_types/types";
 
-const ExperienceSection = ({dropdownItems, isActive, handleDropdown}: SectionProp) => {
+const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
+
+  const [formActive, setFormActive] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState({});
+
+  const getElementAtId = (list: ResumeItemInfo[], id: string) => {
+    for (const item of list) {
+      if (item.id === id) {
+        return item;
+      }
+    }
+  }
+
+  const renderExperienceForm = (data: ResumeItemInfo) => {
+    console.log('here')
+    setFormActive(true);
+    setSelectedExperience(data);
+    return <ExperienceForm experience={data}/>
+  }
 
   return (
     <div className="experience-section">
@@ -13,7 +33,9 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown}: SectionPro
         </div>
         <div className="icon chevron-up"></div>
       </div>
-      {isActive[1] && <DropdownItemContainer dropdownItems={dropdownItems}/>}
+      {(isActive[1])? 
+        formActive? <ExperienceForm/>: <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={renderExperienceForm}/> 
+        : <></>}
     </div>
   )
 }

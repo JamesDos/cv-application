@@ -6,7 +6,7 @@ import ExperienceSection from "./experience/experience_section";
 import { ResumeEditorProp} from "../data_types/types";
 import '../styles/resume_editor.css'
 
-const ResumeEditor = ({person, setHeader}: ResumeEditorProp) => {
+const ResumeEditor = ({person, setHeader, setEd, setEx, delEd, delEx}: ResumeEditorProp) => {
 
   const [dropdownState, setDropdownState] = useState([false, false]);
 
@@ -37,9 +37,24 @@ const ResumeEditor = ({person, setHeader}: ResumeEditorProp) => {
   return (
     <>
       <ResumeEditorHeader/>
-      <PersonalDetails personalDetails={person.personalDetails} setHeader={setHeader}/>
-      <EducationSection dropdownItems={person.educationDetals} isActive = {dropdownState} handleDropdown = {handleToggleDropdownEd}/>
-      <ExperienceSection dropdownItems={person.experienceDetails} isActive = {dropdownState} handleDropdown = {handleToggleDropdownEx}/>
+      <PersonalDetails 
+        personalDetails={person.personalDetails} 
+        setHeader={setHeader}
+        />
+      <EducationSection 
+        dropdownItems={person.educationDetals} 
+        isActive = {dropdownState} 
+        handleDropdown = {handleToggleDropdownEd}
+        setItem={setEd}
+        delItem={delEd}
+        />
+      <ExperienceSection 
+        dropdownItems={person.experienceDetails} 
+        isActive = {dropdownState} 
+        handleDropdown = {handleToggleDropdownEx}
+        setItem={setEx}
+        delItem={delEx}
+        />
     </>
   )
 }

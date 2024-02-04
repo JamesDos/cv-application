@@ -36,16 +36,36 @@ type SectionProp = {
   dropdownItems: ResumeItemInfo[],
   isActive: boolean[],
   handleDropdown: () => void,
+  setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
+  delItem: (id: string) => void,
 }
 
 type ResumeEditorProp = {
   person: PersonInfo,
   setHeader: (propName: string, newName: string) => void,
+  setEd: (newEducationItem: ResumeItemInfo, id: string) => void,
+  setEx: (newExperienceItem: ResumeItemInfo, id: string) => void,
+  delEd: (id: string) => void,
+  delEx: (id: string) => void,
 }
 
 type DropdownContainerProp = {
   dropdownItems: ResumeItemInfo[],
+  setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
+  delItem: (id: string) => void,
+  renderForm: (data: ResumeItemInfo) => JSX.Element
 }
+
+type DropdownItemProp = {
+  location: string,
+  onClick: () => void,
+}
+
+type ExperienceFormProp = {
+  experience: ResumeItemInfo,
+}
+
+
 
 export type {
   HeaderInfo, 
@@ -55,4 +75,6 @@ export type {
   PersonInfo, 
   ResumeEditorProp,
   DropdownContainerProp,
+  DropdownItemProp,
+  ExperienceFormProp,
 }

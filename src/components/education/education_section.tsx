@@ -3,7 +3,7 @@ import DropdownItemContainer from "../dropdown/dropdown-item-container";
 import { SectionProp } from "../../data_types/types";
 import '../../styles/icons.css';
 
-const EducationSection = ({dropdownItems, isActive, handleDropdown}: SectionProp) => {
+const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
 
   return (
     <div className="education-section">
@@ -14,7 +14,7 @@ const EducationSection = ({dropdownItems, isActive, handleDropdown}: SectionProp
         </div>
         <div className="icon chevron-up"></div>
       </div>
-      {isActive[0] && <DropdownItemContainer dropdownItems={dropdownItems}/>}
+      {isActive[0] && <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem}/>}
     </div>
   )
 
