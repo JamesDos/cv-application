@@ -26,7 +26,7 @@ type ResumeItemInfo = {
 
 type PersonInfo = {
   personalDetails: HeaderInfo,
-  educationDetals: ResumeItemInfo[],
+  educationDetails: ResumeItemInfo[],
   experienceDetails: ResumeItemInfo[],
 }
 
@@ -65,6 +65,10 @@ type ExperienceFormProp = {
   experience: ResumeItemInfo,
 }
 
+type EducationFormProp = {
+  education: ResumeItemInfo,
+}
+
 
 
 export type {
@@ -77,4 +81,5 @@ export type {
   DropdownContainerProp,
   DropdownItemProp,
   ExperienceFormProp,
+  EducationFormProp,
 }

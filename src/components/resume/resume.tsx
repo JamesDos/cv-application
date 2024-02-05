@@ -6,7 +6,8 @@ import { PersonInfo} from '../../data_types/types';
 import '../../styles/resume.css';
 
 
-const Resume = ({personalDetails, educationDetals, experienceDetails}: PersonInfo) => {
+const Resume = ({personalDetails, educationDetails, experienceDetails}: PersonInfo) => {
+  
   return (
     <div className="resume-container">
        <ResumeHeader 
@@ -15,8 +16,8 @@ const Resume = ({personalDetails, educationDetals, experienceDetails}: PersonInf
           phoneNum={personalDetails.phoneNum} 
           city={personalDetails.city}
           />
-       <ResumeEducation />
-       <ResumeExperience />
+       <ResumeEducation education={educationDetails}/>
+       <ResumeExperience experience={experienceDetails}/>
     </div>
   )
 }

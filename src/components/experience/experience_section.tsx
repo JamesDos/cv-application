@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback} from "react";
+import { useState} from "react";
 import { SectionProp } from "../../data_types/types";
 import DropdownItemContainer from "../dropdown/dropdown-item-container";
 import ExperienceForm from "./experience_form";
@@ -27,10 +27,6 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
   const setFormState = (state: boolean) => {
     setFormActive(state);
   }
-
-  // useEffect(() => {
-  //   setFormState(true);
-  // }, [selectedExperience])
 
   const renderExperienceForm = () => {
     // console.log('here');

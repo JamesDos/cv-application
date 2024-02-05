@@ -9,14 +9,14 @@ const ExperienceForm = ({experience}: ExperienceFormProp) => {
       <form>
         <FormItem label="Company Name" id="company-field" type="text" placeholder="Enter Company Name" value={experience.location}/>
         <FormItem label="Position Title" id="position-field" type="text" placeholder="Enter Position Title" value={experience.descrTitle}/>
-        <FormItem label="Start Date" id="state-date-field" type="date" placeholder="" value={experience.startDate}/>
-        <FormItem label="End Date" id="end-date-field" type="date" placeholder="" value={experience.endDate}/>
+        <FormItem label="Start Date" id="state-date-field" type="text" placeholder="" value={experience.startDate}/>
+        <FormItem label="End Date" id="end-date-field" type="text" placeholder="" value={experience.endDate}/>
         <div className="experience-description">
           <label htmlFor="experience-description-area">Description</label>
-          <textarea name="description" id="experience-description-area" cols={30} rows={10} value="Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android"></textarea>
+          <textarea name="description" id="experience-description-area" cols={30} rows={10} value={experience.descr}></textarea>
         </div>
         <div className="form-btns-container">
-          <button className="delete-form-btn">Delete</button>
+          <button className="delete-form-btn"><div className="icon btn-trash-icon"></div>Delete</button>
           <button className="cancel-form-btn">Cancel</button>
           <button className="save-form-btn">Save</button>
         </div>

@@ -111,3 +111,57 @@ input {
 .dropdown-item > h1 {
   margin-right: auto;
 }
+
+/* Experience / Education form */
+
+.experience-form > form, .education-form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.experience-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btns-container {
+  display: flex;
+  gap: 16px;
+}
+
+.form-btns-container :first-child {
+  margin-right: auto;
+}
+
+.delete-form-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid black;
+  background-color: white;
+  font-weight: bold;
+}
+
+.cancel-form-btn {
+  border: 1px solid black;
+  background-color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  height: 40px;
+  width: 70px;
+}
+
+.save-form-btn {
+  border: none;
+  background-color: #4679fa;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  height: 40px;
+  width: 70px;
+
+}
+

@@ -39,8 +39,8 @@ function App() {
 
 
   const setEducation = (newEducationItem: ResumeItemInfo, id: string) => {
-    const newEducationList = replaceElementAtId(person.educationDetals, id, newEducationItem);
-    setPerson({...person, educationDetals: newEducationList});
+    const newEducationList = replaceElementAtId(person.educationDetails, id, newEducationItem);
+    setPerson({...person, educationDetails: newEducationList});
   }
 
   const setExperience = (newExperienceItem: ResumeItemInfo, id: string) => {
@@ -49,8 +49,8 @@ function App() {
   }
 
   const deleteEducationItem = (id: string) => {
-    const newEducationList = removeElementAtId(person.educationDetals, id);
-    setPerson({...person, educationDetals: newEducationList});
+    const newEducationList = removeElementAtId(person.educationDetails, id);
+    setPerson({...person, educationDetails: newEducationList});
   }
 
   const deleteExperienceItem = (id: string) => {

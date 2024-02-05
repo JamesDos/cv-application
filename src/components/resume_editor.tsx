@@ -42,7 +42,7 @@ const ResumeEditor = ({person, setHeader, setEd, setEx, delEd, delEx}: ResumeEdi
         setHeader={setHeader}
         />
       <EducationSection 
-        dropdownItems={person.educationDetals} 
+        dropdownItems={person.educationDetails} 
         isActive = {dropdownState} 
         handleDropdown = {handleToggleDropdownEd}
         setItem={setEd}

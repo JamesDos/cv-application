@@ -1,9 +1,34 @@
 import { useState } from "react";
 import DropdownItemContainer from "../dropdown/dropdown-item-container";
 import { SectionProp } from "../../data_types/types";
+import { ResumeItemInfo } from "../../data_types/types";
+import EducationForm from "./education_form";
 import '../../styles/icons.css';
 
 const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
+
+  const [formActive, setFormActive] = useState(false);
+  const [selectedEducation, setSelectedEducation] = useState(dropdownItems[0]);
+
+  const handleSelectEducation = (education: ResumeItemInfo) => {
+    setFormState(true);
+    setSelectedEducation(education);
+  }
+
+  const setFormState = (state: boolean) => {
+    setFormActive(state);
+  }
+
+  const renderEducationForm = () => {
+    return <EducationForm education={selectedEducation}/>
+  }
+
+  const renderEducationSectionItems = () => {
+    return (isActive[0])? 
+        formActive ? renderEducationForm()
+        : <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={handleSelectEducation}/> 
+        : <></>
+  }
 
   return (
     <div className="education-section">
@@ -14,7 +39,7 @@ const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, del
         </div>
         <div className="icon chevron-up"></div>
       </div>
-      {isActive[0] && <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem}/>}
+      {renderEducationSectionItems()}
     </div>
   )
 
