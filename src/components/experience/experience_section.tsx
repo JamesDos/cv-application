@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback} from "react";
 import { SectionProp } from "../../data_types/types";
 import DropdownItemContainer from "../dropdown/dropdown-item-container";
 import ExperienceForm from "./experience_form";
 import { ResumeItemInfo } from "../../data_types/types";
+import ResumeItem from "../resume/resume_item";
 
 const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
 
   const [formActive, setFormActive] = useState(false);
-  const [selectedExperience, setSelectedExperience] = useState({});
+  const [selectedExperience, setSelectedExperience] = useState(dropdownItems[0]);
 
   const getElementAtId = (list: ResumeItemInfo[], id: string) => {
     for (const item of list) {
@@ -17,11 +18,30 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
     }
   }
 
-  const renderExperienceForm = (data: ResumeItemInfo) => {
+  const handleSelectExperience = (experience: ResumeItemInfo) => {
     console.log('here')
-    setFormActive(true);
-    setSelectedExperience(data);
-    return <ExperienceForm experience={data}/>
+    setFormState(true);
+    setSelectedExperience(experience);
+  }
+
+  const setFormState = (state: boolean) => {
+    setFormActive(state);
+  }
+
+  // useEffect(() => {
+  //   setFormState(true);
+  // }, [selectedExperience])
+
+  const renderExperienceForm = () => {
+    // console.log('here');
+    return <ExperienceForm experience={selectedExperience}/>
+  }
+
+  const renderExperienceSectionItems = () => {
+    return (isActive[1])? 
+        formActive ? renderExperienceForm()
+        : <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={handleSelectExperience}/> 
+        : <></>
   }
 
   return (
@@ -33,9 +53,7 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
         </div>
         <div className="icon chevron-up"></div>
       </div>
-      {(isActive[1])? 
-        formActive? <ExperienceForm/>: <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={renderExperienceForm}/> 
-        : <></>}
+      {renderExperienceSectionItems()}
     </div>
   )
 }

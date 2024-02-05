@@ -53,12 +53,12 @@ type DropdownContainerProp = {
   dropdownItems: ResumeItemInfo[],
   setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
   delItem: (id: string) => void,
-  renderForm: (data: ResumeItemInfo) => JSX.Element
+  renderForm: (experience: ResumeItemInfo) => void
 }
 
 type DropdownItemProp = {
   location: string,
-  onClick: () => void,
+  onClick: (experience: ResumeItemInfo) => void
 }
 
 type ExperienceFormProp = {
