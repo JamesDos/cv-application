@@ -1,10 +1,12 @@
 // import { useState } from "react";
 import { DropdownItemProp } from "../../data_types/types"
 
-const DropdownItem = ({location, func}: DropdownItemProp) => {
+const DropdownItem = ({location, openForm}: DropdownItemProp) => {
   return (
     <div className="dropdown-item">
-      <h1 onClick={func}>{location}</h1>
+      <div onClick={openForm}>
+        <h1>{location}</h1>
+      </div>
       <div className="icon eye-icon"></div>
     </div>
   )

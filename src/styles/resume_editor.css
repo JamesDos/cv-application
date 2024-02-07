@@ -103,13 +103,14 @@ input {
 .dropdown-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 8px 16px;
   border: 1px solid black;
   border-radius: 8px;
 }
 
-.dropdown-item > h1 {
-  margin-right: auto;
+.dropdown-item :first-child {
+  width: 95%;
 }
 
 /* Experience / Education form */

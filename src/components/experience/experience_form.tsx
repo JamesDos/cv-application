@@ -3,7 +3,7 @@
 import FormItem from "../form_item";
 import { ExperienceFormProp } from "../../data_types/types";
 
-const ExperienceForm = ({experience}: ExperienceFormProp) => {
+const ExperienceForm = ({experience, cancelForm}: ExperienceFormProp) => {
   return (
     <div className="experience-form">
       <form>
@@ -17,7 +17,7 @@ const ExperienceForm = ({experience}: ExperienceFormProp) => {
         </div>
         <div className="form-btns-container">
           <button className="delete-form-btn"><div className="icon btn-trash-icon"></div>Delete</button>
-          <button className="cancel-form-btn">Cancel</button>
+          <button className="cancel-form-btn" onClick={cancelForm}>Cancel</button>
           <button className="save-form-btn">Save</button>
         </div>
       </form>

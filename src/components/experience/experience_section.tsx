@@ -20,17 +20,19 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
 
   const handleSelectExperience = (experience: ResumeItemInfo) => {
     console.log('here')
-    setFormState(true);
+    setFormActive(true);
     setSelectedExperience(experience);
   }
 
-  const setFormState = (state: boolean) => {
-    setFormActive(state);
+  const cancelSelectExperience = () => {
+    setFormActive(false);
+    setSelectedExperience(dropdownItems[0]);
   }
+
 
   const renderExperienceForm = () => {
     // console.log('here');
-    return <ExperienceForm experience={selectedExperience}/>
+    return <ExperienceForm cancelForm={cancelSelectExperience} experience={selectedExperience}/>
   }
 
   const renderExperienceSectionItems = () => {

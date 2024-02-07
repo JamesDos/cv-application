@@ -2,7 +2,7 @@
 import { EducationFormProp } from "../../data_types/types";
 import FormItem from "../form_item";
 
-const EducationForm = ({education}: EducationFormProp) => {
+const EducationForm = ({education, cancelForm}: EducationFormProp) => {
   return (
     <div className="education-form">
       <form>
@@ -13,7 +13,7 @@ const EducationForm = ({education}: EducationFormProp) => {
         <FormItem label="Location" id="location-field" type="text" placeholder="Enter Location" value={education.place}/>
         <div className="form-btns-container">
           <button className="delete-form-btn">Delete</button>
-          <button className="cancel-form-btn">Cancel</button>
+          <button className="cancel-form-btn" onClick={cancelForm}>Cancel</button>
           <button className="save-form-btn">Save</button>
         </div>
       </form>

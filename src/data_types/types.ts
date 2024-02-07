@@ -58,15 +58,17 @@ type DropdownContainerProp = {
 
 type DropdownItemProp = {
   location: string,
-  onClick: (experience: ResumeItemInfo) => void
+  openForm: () => void
 }
 
 type ExperienceFormProp = {
   experience: ResumeItemInfo,
+  cancelForm: () => void,
 }
 
 type EducationFormProp = {
   education: ResumeItemInfo,
+  cancelForm: () => void,
 }
 
 

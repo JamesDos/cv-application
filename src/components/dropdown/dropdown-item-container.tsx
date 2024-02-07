@@ -7,7 +7,7 @@ const DropdownItemContainer = ({dropdownItems, setItem, delItem, renderForm}: Dr
 
   const renderDropdownItems = () => {
       return dropdownItems.map((item, id) => 
-        <DropdownItem func={() => renderForm(item)} key={id} location={item.location}/>
+        <DropdownItem openForm={() => renderForm(item)} key={id} location={item.location}/>
     )
   }
 

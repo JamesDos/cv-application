@@ -11,16 +11,17 @@ const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, del
   const [selectedEducation, setSelectedEducation] = useState(dropdownItems[0]);
 
   const handleSelectEducation = (education: ResumeItemInfo) => {
-    setFormState(true);
+    setFormActive(true);
     setSelectedEducation(education);
   }
 
-  const setFormState = (state: boolean) => {
-    setFormActive(state);
+  const cancelSelectEducation = () => {
+    setFormActive(false);
+    setSelectedEducation(dropdownItems[0]);
   }
 
   const renderEducationForm = () => {
-    return <EducationForm education={selectedEducation}/>
+    return <EducationForm cancelForm={cancelSelectEducation} education={selectedEducation}/>
   }
 
   const renderEducationSectionItems = () => {

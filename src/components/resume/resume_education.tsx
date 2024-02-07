@@ -23,8 +23,6 @@ const ResumeEducation = ({education}: {education: ResumeItemInfo[]}) => {
     <div className="resume-education-section">
       <h3 className="resume-section-title">Education</h3>
       {renderResumeItems()}
-      {/* <ResumeItem startDate="1/1/2024" endDate="1/1/2024" location="New York, US" place="Cornell" descrTitle="Computer Science" descr=""/>
-      <ResumeItem startDate="1/1/2024" endDate="1/1/2024" location="New York, US" place="Cornell" descrTitle="Computer Science" descr=""/> */}
     </div>
   )
 
