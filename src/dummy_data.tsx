@@ -1,4 +1,4 @@
-import { PersonInfo } from "../data_types/types";
+import { PersonInfo } from "./data_types/types";
 import {v4 as uuid} from "uuid";
 
 const startingData: PersonInfo = {

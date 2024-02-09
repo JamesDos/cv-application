@@ -21,7 +21,7 @@ const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, del
   }
 
   const renderEducationForm = () => {
-    return <EducationForm cancelForm={cancelSelectEducation} education={selectedEducation}/>
+    return <EducationForm cancelForm={cancelSelectEducation} education={selectedEducation} setItem={setItem} delItem={delItem}/>
   }
 
   const renderEducationSectionItems = () => {

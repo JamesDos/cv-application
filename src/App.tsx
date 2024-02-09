@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Resume } from './components/resume/resume';
-import ResumeEditor from './components/resume_editor';
+import ResumeEditor from './components/resume_editor/resume_editor';
 import EducationSection from './components/education/education_section';
 import ExperienceSection from './components/experience/experience_section';
 import CustomizeBar from './components/customize/customize-item';
-import startingData from './components/dummy_data';
+import startingData from './dummy_data';
 import './styles/App.css';
 import { PersonInfo, ResumeItemInfo } from './data_types/types';
 

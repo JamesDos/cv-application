@@ -32,7 +32,7 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
 
   const renderExperienceForm = () => {
     // console.log('here');
-    return <ExperienceForm cancelForm={cancelSelectExperience} experience={selectedExperience}/>
+    return <ExperienceForm cancelForm={cancelSelectExperience} experience={selectedExperience} setItem={setItem} delItem={delItem}/>
   }
 
   const renderExperienceSectionItems = () => {
