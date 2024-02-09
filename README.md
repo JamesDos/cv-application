@@ -31,4 +31,4 @@ export default {
 
 ## CV Application
 
-CV editor made using react and typescript as a part of the Odin project's react course
+CV editor made using react and typescript as a part of the Odin project's react course. Update
