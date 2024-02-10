@@ -5,23 +5,16 @@ import ExperienceForm from "./experience_form";
 import { ResumeItemInfo } from "../../data_types/types";
 import ResumeItem from "../resume/resume_item";
 
-const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
+const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem, addItem}: SectionProp) => {
 
   const [formActive, setFormActive] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(dropdownItems[0]);
+  const [editItem, setEditItem] = useState(false);
 
-  const getElementAtId = (list: ResumeItemInfo[], id: string) => {
-    for (const item of list) {
-      if (item.id === id) {
-        return item;
-      }
-    }
-  }
-
-  const handleSelectExperience = (experience: ResumeItemInfo) => {
-    console.log('here')
+  const handleSelectExperience = (experience: ResumeItemInfo, editExperience: boolean) => {
     setFormActive(true);
     setSelectedExperience(experience);
+    setEditItem(editExperience);
   }
 
   const cancelSelectExperience = () => {
@@ -29,16 +22,21 @@ const ExperienceSection = ({dropdownItems, isActive, handleDropdown, setItem, de
     setSelectedExperience(dropdownItems[0]);
   }
 
-
-  const renderExperienceForm = () => {
-    // console.log('here');
-    return <ExperienceForm cancelForm={cancelSelectExperience} experience={selectedExperience} setItem={setItem} delItem={delItem}/>
-  }
+  const renderExperienceForm = (isEditForm: boolean) => 
+    <ExperienceForm 
+    cancelForm={cancelSelectExperience} 
+    experience={selectedExperience} 
+    setItem={setItem} 
+    delItem={delItem} 
+    addItem={addItem}
+    isEditForm={isEditForm}
+    />
+  
 
   const renderExperienceSectionItems = () => {
     return (isActive[1])? 
-        formActive ? renderExperienceForm()
-        : <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={handleSelectExperience}/> 
+        formActive ? renderExperienceForm(editItem)
+        : <DropdownItemContainer dropdownItems={dropdownItems} renderForm={handleSelectExperience} addItem={addItem}/> 
         : <></>
   }
 

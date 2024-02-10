@@ -50,4 +50,15 @@ const startingData: PersonInfo = {
   ],
 }
 
-export default startingData
+const blankResume: PersonInfo = {
+  personalDetails: {
+    name: "",
+    email: "",
+    phoneNum: "",
+    city: "",
+  },
+  educationDetails: [],
+  experienceDetails: [],
+}
+
+export {startingData, blankResume}

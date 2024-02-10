@@ -38,6 +38,12 @@ type SectionProp = {
   handleDropdown: () => void,
   setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
   delItem: (id: string) => void,
+  addItem: (newEducationItem: ResumeItemInfo) => void
+}
+
+type ResumeEditorHeaderProp = {
+  clearResume: () => void,
+  loadDefaultResume: () => void,
 }
 
 type ResumeEditorProp = {
@@ -47,13 +53,23 @@ type ResumeEditorProp = {
   setEx: (newExperienceItem: ResumeItemInfo, id: string) => void,
   delEd: (id: string) => void,
   delEx: (id: string) => void,
+  addEd: (newEducationItem: ResumeItemInfo) => void,
+  addEx: (newExperienceItem: ResumeItemInfo) => void,
+  clearResume: () => void,
+  loadDefaultResume: () => void,
+}
+
+type PersonalDetailsProp = {
+  personalDetails: HeaderInfo,
+  setHeader: (propName: string, newName: string) => void,
 }
 
 type DropdownContainerProp = {
   dropdownItems: ResumeItemInfo[],
-  setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
-  delItem: (id: string) => void,
-  renderForm: (experience: ResumeItemInfo) => void
+  // setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
+  // delItem: (id: string) => void,
+  renderForm: (experience: ResumeItemInfo, editExperience: boolean) => void
+  addItem: (newEducationItem: ResumeItemInfo) => void,
 }
 
 type DropdownItemProp = {
@@ -66,6 +82,8 @@ type ExperienceFormProp = {
   cancelForm: () => void,
   setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
   delItem: (id: string) => void,
+  addItem: (newEducationItem: ResumeItemInfo) => void,
+  isEditForm: boolean,
 }
 
 type EducationFormProp = {
@@ -73,6 +91,8 @@ type EducationFormProp = {
   cancelForm: () => void,
   setItem: (newEducationItem: ResumeItemInfo, id: string) => void,
   delItem: (id: string) => void,
+  addItem: (newEducationItem: ResumeItemInfo) => void,
+  isEditForm: boolean,
 }
 
 
@@ -83,7 +103,9 @@ export type {
   ResumeItemInfo, 
   SectionProp, 
   PersonInfo, 
+  ResumeEditorHeaderProp,
   ResumeEditorProp,
+  PersonalDetailsProp,
   DropdownContainerProp,
   DropdownItemProp,
   ExperienceFormProp,

@@ -5,14 +5,16 @@ import { ResumeItemInfo } from "../../data_types/types";
 import EducationForm from "./education_form";
 import '../../styles/icons.css';
 
-const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem}: SectionProp) => {
+const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, delItem, addItem}: SectionProp) => {
 
   const [formActive, setFormActive] = useState(false);
   const [selectedEducation, setSelectedEducation] = useState(dropdownItems[0]);
+  const [editForm, setEditItem] = useState(false)
 
-  const handleSelectEducation = (education: ResumeItemInfo) => {
+  const handleSelectEducation = (education: ResumeItemInfo, editEducation: boolean) => {
     setFormActive(true);
     setSelectedEducation(education);
+    setEditItem(editEducation)
   }
 
   const cancelSelectEducation = () => {
@@ -20,14 +22,21 @@ const EducationSection = ({dropdownItems, isActive, handleDropdown, setItem, del
     setSelectedEducation(dropdownItems[0]);
   }
 
-  const renderEducationForm = () => {
-    return <EducationForm cancelForm={cancelSelectEducation} education={selectedEducation} setItem={setItem} delItem={delItem}/>
-  }
+  const renderEducationForm = (isEditForm: boolean) => 
+    <EducationForm 
+      cancelForm={cancelSelectEducation} 
+      education={selectedEducation} 
+      setItem={setItem} 
+      delItem={delItem}
+      addItem={addItem}
+      isEditForm={isEditForm}
+      />
+  
 
   const renderEducationSectionItems = () => {
     return (isActive[0])? 
-        formActive ? renderEducationForm()
-        : <DropdownItemContainer dropdownItems={dropdownItems} setItem={setItem} delItem={delItem} renderForm={handleSelectEducation}/> 
+        formActive ? renderEducationForm(editForm)
+        : <DropdownItemContainer dropdownItems={dropdownItems} renderForm={handleSelectEducation} addItem={addItem}/> 
         : <></>
   }
 

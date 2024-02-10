@@ -4,7 +4,7 @@ import ResumeEditor from './components/resume_editor/resume_editor';
 import EducationSection from './components/education/education_section';
 import ExperienceSection from './components/experience/experience_section';
 import CustomizeBar from './components/customize/customize-item';
-import startingData from './dummy_data';
+import {startingData, blankResume} from './dummy_data';
 import './styles/App.css';
 import { PersonInfo, ResumeItemInfo } from './data_types/types';
 
@@ -37,7 +37,6 @@ function App() {
     return acc;
   }
 
-
   const setEducation = (newEducationItem: ResumeItemInfo, id: string) => {
     const newEducationList = replaceElementAtId(person.educationDetails, id, newEducationItem);
     setPerson({...person, educationDetails: newEducationList});
@@ -57,6 +56,20 @@ function App() {
     const newExperienceList = removeElementAtId(person.experienceDetails, id);
     setPerson({...person, experienceDetails: newExperienceList});
   }
+
+  const addEducation = (newEducationItem: ResumeItemInfo) => {
+    const newEducationList = [...person.educationDetails, newEducationItem];
+    setPerson({...person, educationDetails: newEducationList});
+  }
+
+  const addExperience = (newExperienceItem: ResumeItemInfo) => {
+    const newExperienceList = [...person.experienceDetails, newExperienceItem];
+    setPerson({...person, experienceDetails: newExperienceList});
+  }
+
+  const clearResume = () => setPerson(blankResume);
+  
+  const loadDefaultResume = () => setPerson(startingData);
   
   return (
     <>
@@ -69,6 +82,10 @@ function App() {
         delEd = {deleteEducationItem}
         setEx = {setExperience}
         delEx= {deleteExperienceItem}
+        addEd = {addEducation}
+        addEx = {addExperience}
+        clearResume={clearResume}
+        loadDefaultResume={loadDefaultResume}
         />
     </>
   )

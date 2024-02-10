@@ -3,37 +3,30 @@ import { useState } from "react";
 import FormItem from "../form_item";
 import { ExperienceFormProp } from "../../data_types/types";
 
-const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFormProp) => {
+const ExperienceForm = ({experience, cancelForm, setItem, delItem, addItem, isEditForm}: ExperienceFormProp) => {
 
   const [experienceItemInfo, setExperienceItemInfo] = useState({...experience});
-
-  const handleCompanyChange = (newCompany: string) => {
-    setExperienceItemInfo({...experienceItemInfo, location: newCompany});
+  
+  const handleExperienceItemInfoChange = (prop: string, newVal: string) => {
+    setExperienceItemInfo({...experienceItemInfo, [prop]: newVal});
   }
-
-  const handleDescrTitleChange = (newDescrTitle: string) => {
-    setExperienceItemInfo({...experienceItemInfo, descrTitle: newDescrTitle});
-  }
-
-  const handleStartDateChange = (newStartDate: string) => {
-    setExperienceItemInfo({...experienceItemInfo, startDate: newStartDate});
-  }
-
-  const handleEndDateChange = (newEndDate: string) => {
-    setExperienceItemInfo({...experienceItemInfo, endDate: newEndDate});
-  }
-
-  const handPlaceChange = (newPlace: string) => {
-    setExperienceItemInfo({...experienceItemInfo, place: newPlace});
-  }
-
-  const handleDescrChange = (newDescr: string) => {
-    setExperienceItemInfo({...experienceItemInfo, descr: newDescr});
-  }
-
+  
   const handleSaveForm = (e: Event) => {
     e.preventDefault();
-    setItem(experienceItemInfo, experienceItemInfo.id);
+    if (isEditForm) {
+      setItem(experienceItemInfo, experienceItemInfo.id);
+      cancelForm();
+    } else {
+      addItem(experienceItemInfo)
+    }
+    cancelForm();
+  }
+
+  const handleDeleteForm = (e: Event) => {
+    e.preventDefault();
+    if (isEditForm) {
+      delItem(experienceItemInfo.id);
+    }
     cancelForm();
   }
 
@@ -47,7 +40,7 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
           type="text" 
           placeholder="Enter Company Name" 
           value={experienceItemInfo.location}
-          onChange={newCompany => handleCompanyChange(newCompany)}
+          onChange={newCompany => handleExperienceItemInfoChange("location", newCompany)}
           />
         <FormItem 
           label="Position Title" 
@@ -55,7 +48,7 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
           type="text" 
           placeholder="Enter Position Title" 
           value={experienceItemInfo.descrTitle}
-          onChange={newDescrTitle => handleDescrTitleChange(newDescrTitle)}
+          onChange={newDescrTitle => handleExperienceItemInfoChange("descrTitle", newDescrTitle)}
           />
         <FormItem 
           label="Start Date" 
@@ -63,7 +56,7 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
           type="text" 
           placeholder="" 
           value={experienceItemInfo.startDate}
-          onChange={newStartDate => handleStartDateChange(newStartDate)}
+          onChange={newStartDate => handleExperienceItemInfoChange("startDate", newStartDate)}
           />
         <FormItem 
           label="End Date" 
@@ -71,7 +64,7 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
           type="text" 
           placeholder="" 
           value={experienceItemInfo.endDate}
-          onChange={newEndDate => handleEndDateChange(newEndDate)}
+          onChange={newEndDate => handleExperienceItemInfoChange("endDate", newEndDate)}
           />
         <FormItem 
           label="Location" 
@@ -79,7 +72,7 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
           type="text" 
           placeholder="Enter Location" 
           value={experienceItemInfo.place}
-          onChange={newPlace => handPlaceChange(newPlace)}/>
+          onChange={newPlace => handleExperienceItemInfoChange("place", newPlace)}/>
 
         <div className="experience-description">
           <label htmlFor="experience-description-area">Description</label>
@@ -89,10 +82,10 @@ const ExperienceForm = ({experience, cancelForm, setItem, delItem}: ExperienceFo
             cols={30} 
             rows={10} 
             value={experienceItemInfo.descr} 
-            onChange={e => handleDescrChange(e.target.value)}></textarea>
+            onChange={e => handleExperienceItemInfoChange("descr", e.target.value)}></textarea>
         </div>
         <div className="form-btns-container">
-          <button className="delete-form-btn"><div className="icon btn-trash-icon"></div>Delete</button>
+          <button className="delete-form-btn" onClick={e => handleDeleteForm(e)}><div className="icon btn-trash-icon"></div>Delete</button>
           <button className="cancel-form-btn" onClick={cancelForm}>Cancel</button>
           <button className="save-form-btn" onClick={e => handleSaveForm(e)}>Save</button>
         </div>
