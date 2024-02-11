@@ -35,7 +35,7 @@ const ResumeEditor = ({person, setHeader, setEd, setEx, delEd, delEx, addEd, add
   }
 
   return (
-    <>
+    <div className="resume-editor">
       <ResumeEditorHeader
         clearResume={clearResume}
         loadDefaultResume={loadDefaultResume}
@@ -60,7 +60,7 @@ const ResumeEditor = ({person, setHeader, setEd, setEx, delEd, delEx, addEd, add
         delItem={delEx}
         addItem={addEx}
         />
-    </>
+    </div>
   )
 }
 

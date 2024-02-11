@@ -67,14 +67,15 @@ function App() {
     setPerson({...person, experienceDetails: newExperienceList});
   }
 
-  const clearResume = () => setPerson(blankResume);
+  const clearResume = () => {
+    setPerson(blankResume);
+  }
   
   const loadDefaultResume = () => setPerson(startingData);
   
   return (
     <>
       <CustomizeBar/>
-      <Resume {...person}/>
       <ResumeEditor 
         person={person} 
         setHeader={setHeader}
@@ -87,6 +88,7 @@ function App() {
         clearResume={clearResume}
         loadDefaultResume={loadDefaultResume}
         />
+      <Resume {...person}/>
     </>
   )
 }

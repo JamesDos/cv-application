@@ -12,6 +12,10 @@ const CustomizeBar = () => {
         <div className="icon" id="customize-icon"></div>
         <p>Customize</p>
       </div>
+      <div className="customize-bar-save-resume-contaner">
+        <div className="icon" id="save-icon"></div>
+        <p>Save Resume</p>
+      </div>
     </div>
   )
 }

@@ -1,14 +1,17 @@
+.resume-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
 .resume-editor-header {
   display: flex;
   justify-content: stretch;
   align-items: center;
-  grid-row: 1 / 1;
-  grid-column: 2 / 3;
-  height: 40%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 16px;
-  padding: 4px 16px;
+  height: 20%;
   gap: 16px;
+  flex: 1;
 }
 
 .resume-editor-header :first-child {
@@ -39,6 +42,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 16px;
   padding: 16px 16px;
+  flex: 3;
 }
 
 .personal-details-container > form {
@@ -79,6 +83,7 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex: 1;
   /* display: flex;
   gap: 16px;
   padding: 8px 16px;
@@ -94,10 +99,14 @@ input {
   gap: 16px;
 }
 
+/* Dropdown */
+
 .dropdown-items-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 8px;
 }
 
 .dropdown-item {
@@ -107,10 +116,20 @@ input {
   padding: 8px 16px;
   border: 1px solid black;
   border-radius: 8px;
+  width: 90%;
 }
 
 .dropdown-item :first-child {
   width: 95%;
+}
+
+.dropdown-items-container > button {
+  width: 50%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  border: 1px solid black;
 }
 
 /* Experience / Education form */
@@ -163,6 +182,5 @@ input {
   border-radius: 8px;
   height: 40px;
   width: 70px;
-
 }
 
