@@ -47,6 +47,10 @@
   text-align: left;
 }
 
+.resume-item-left {
+  padding-right: max(8px, 10%);
+}
+
 .resume-item-right :first-child {
   flex-direction: column;
   font-weight: bold;

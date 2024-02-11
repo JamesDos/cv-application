@@ -6,10 +6,14 @@
 .resume-editor {
   flex: 4;
   margin-bottom: 32px;
+  padding-right: 16px;
 }
 
 .resume-container {
   flex: 6;
+  /* width: 595.28pt;
+  height: 841.89pt; */
+  width: 620px;
   min-height: 100vh;
   height: 100%;
   display: flex;
